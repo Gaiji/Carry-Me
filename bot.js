@@ -27,12 +27,13 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, data) {
-	    if (data){
-		let embed = new Discord.RichEmbed()
-	            .setDescription(data.player.displayname + "'s UHC Champions Stats")
-       		    .addField("Coins", zero(data.player.stats.UHC.coins), true)
-	        message.channel.sendEmbed(embed);
-	    }
+	    let embed = new Discord.RichEmbed()
+	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		.addField("Coins", zero(body.player.stats.UHC.coins), true)
+		.addField("Score", zero(body.player.stats.UHC.score), true)
+		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+	    message.channel.sendEmbed(embed);
 	});
     }
     if (message.content.startsWith(prefix + 'namehistory')) {
@@ -47,13 +48,9 @@ client.on('message', message => {
 	    let uuid = body.id;
 	    var url2 = 'https://api.mojang.com/user/profiles/'+body.id+'/names'
 	    request(url2, function(err, response, body) {
-		let embed = new Discord.RichEmbed()
-+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
-+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
-+		    .addField("Score", zero(body.player.stats.UHC.score), true)
-+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-+	        message.channel.sendEmbed(embed);
+	        let embed = new Discord.RichEmbed()
+		    .setAuthor(body.id)
+		message.channel.sendEmbed(embed);
 	    });
 	    //let embed = new Discord.RichEmbed()
     	    //    .setAuthor(body.id)
