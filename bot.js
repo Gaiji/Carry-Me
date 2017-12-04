@@ -28,8 +28,9 @@ client.on('message', message => {
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
 	message.channel.send(url);
 	request(url, function(err, response, body) {
-	    console.log(body);
-	    return;
+	    if(body.equals("<html><body><h1>400 Bad request</h1>)"){
+	       return message.reply(';translate <word>');
+            }
 	    if(!body) {
                 return message.reply(';translate <word>');
             }
