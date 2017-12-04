@@ -4,12 +4,36 @@ const snekfetch = require("snekfetch");
 
 let prefix = ';'
 
+var request = require('request');
+var mcCommand = 'hypixel'; // Command for triggering
+var mcIP = 'hypixel.net'; // Your MC server IP
+var mcPort = 25565; // Your MC server port
+
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: ';help', type: 0 } });
 });
-
 client.on('message', message => {
+    if (message.content === prefix + mcCommand) {
+        var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
+        request(url, function(err, response, body) {
+            if(err) {
+                console.log(err);
+                return message.reply('Error getting Minecraft server status...');
+            }
+            body = JSON.parse(body);
+            var status = '*Minecraft server is currently offline*';
+            if(body.online) {
+                status = '**Minecraft** server is **online**  -  ';
+                if(body.players.now) {
+                    status += '**' + body.players.now + '** people are playing!';
+                } else {
+                    status += '*Nobody is playing!*';
+                }
+            }
+            message.reply(status);
+        });
+    }
     if (message.content === prefix + 'ping') {
     	message.channel.sendMessage('あなたのPingは`' + `${Date.now() - message.createdTimestamp}` + ' ms`です');
     }
