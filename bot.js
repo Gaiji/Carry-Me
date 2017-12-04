@@ -12,6 +12,12 @@ client.on('message', message => {
     	message.channel.sendMessage('あなたのPingは`' + `${Date.now() - message.createdTimestamp}` + ' ms`です');
         //message.reply('pong');
   	}
+    if (message.content === prefix + 'help') {
+    	message.channel.sendMessage('コマンド:');
+    	message.channel.sendMessage(' ;ping');
+    	message.channel.sendMessage(' ;?');
+        //message.reply('pong');
+  	}
 });
 
 client.login(process.env.BOT_TOKEN);
