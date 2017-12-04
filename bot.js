@@ -21,6 +21,10 @@ client.on('message', message => {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key=' + key + '&name='+unk
+	request(url, function(err, response, body) {
+	    message.channel.send(body);
+	}
+    }
     if (message.content.startsWith(prefix + 'namehistory')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
