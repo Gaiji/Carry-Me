@@ -29,15 +29,15 @@ client.on('message', message => {
 		    let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
-	                .setDescription(" Stats: "+ stats)
-	                .setDescription(" Players: "+ *body.players.now*);
+	                .setDescription(" Stats: *"+ stats + "*")
+	                .setDescription(" Players: *"+ body.players.now + "*");
 	            
                 } else {
                     let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
-	                .setDescription(" Stats: "+ stats)
-	                .setDescription(" Players: "+ *0*);
+	                .setDescription(" Stats: *"+ stats + "*")
+	                .setDescription(" Players: *"+ 0 + "*");
                 }
             }
             message.channel.sendEmbed(embed);
