@@ -22,6 +22,9 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'stars')) {
 	let args = message.content.split(" ").slice(1);
 	let test = Number(args.join(" "))
+	if (test < 10){
+	    message.channel.sendMessage('あなたは`1スター`です(' + test + ' Score)');
+	}
 	if (test => 10){
 	    message.channel.sendMessage('あなたは`2スター`です(' + test + ' Score)');
 	}
