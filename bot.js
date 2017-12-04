@@ -22,16 +22,25 @@ client.on('message', message => {
                 return message.reply('Error getting Minecraft server status...');
             }
             body = JSON.parse(body);
-            var status = '*Minecraft server is currently offline*';
+            var status = '*Offline*';
             if(body.online) {
-                status = '**Minecraft** server is **online**  -  ';
+                status = '*Online*';
                 if(body.players.now) {
-                    status += '**' + body.players.now + '** people are playing!';
+		    let embed = new Discord.RichEmbed()
+    	                .setAuthor("Hypixel.net")
+	                .setColor("#9B59B6")
+	                .setDescription(" Stats: "+ stats)
+	                .setDescription(" Players: "+ *body.players.now*);
+	            
                 } else {
-                    status += '*Nobody is playing!*';
+                    let embed = new Discord.RichEmbed()
+    	                .setAuthor("Hypixel.net")
+	                .setColor("#9B59B6")
+	                .setDescription(" Stats: "+ stats)
+	                .setDescription(" Players: "+ *0*);
                 }
             }
-            message.reply(status);
+            message.channel.sendEmbed(embed);
         });
     }
     if (message.content === prefix + 'ping') {
