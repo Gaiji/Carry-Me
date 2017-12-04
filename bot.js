@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 let prefix = ';'
-const commandslist = JSON.parse(fs.readFileSync('Carry-Me/commands.txt', 'utf8'));
+var fs = require('fs');
+var commandslist = JSON.parse(fs.readFileSync('Carry-Me/commands.txt', 'utf8'));
 
 client.on('ready', () => {
     console.log('I am ready!');
