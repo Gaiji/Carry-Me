@@ -23,7 +23,7 @@ client.on('message', message => {
 	let body = r.body;
 	let id = args[0];
 	let entry = body.find(post => post.id === id);
-	message.author.send(entry);
+	console.log(entry);
     });
 });
 
