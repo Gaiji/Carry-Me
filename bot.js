@@ -10,6 +10,9 @@ client.on('message', message => {
     if (message.content === prefix + 'ping') {
     	message.reply('pong');
   	}
+    if (message.content === prefix + 'test') {
+    	message.reply('pong');
+  	}
 });
 
 client.login(process.env.BOT_TOKEN);
