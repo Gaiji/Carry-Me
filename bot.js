@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
-const request = require('request');
-var key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 
 let prefix = ';'
 
@@ -10,6 +8,7 @@ var request = require('request');
 var mcCommand = 'hypixel'; // Command for triggering
 var mcIP = 'hypixel.net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
+var key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 
 client.on('ready', () => {
     console.log('I am ready!');
