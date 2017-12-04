@@ -25,7 +25,7 @@ client.on('message', message => {
 	if (test < 10){
 	    message.channel.sendMessage('あなたは`1スター`です(' + test + ' Score)');
 	}
-	if (test => 10){
+	if (test >= 10){
 	    message.channel.sendMessage('あなたは`2スター`です(' + test + ' Score)');
 	}
     }
