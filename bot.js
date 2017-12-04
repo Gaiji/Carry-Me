@@ -23,7 +23,7 @@ client.on('message', message => {
 	let body = r.body;
 	let id = message;
 	let entry = body.find(post => post.id === id);
-	console.log(entry);
+	console.log(r.UHC);
     });
 });
 
