@@ -4,7 +4,7 @@ let prefix = '!'
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setPresence({ game: { name: 'yourGameGoesHere', type: 0 } });
+    client.user.setPresence({ game: { name: '~CarryMe', type: 0 } });
 });
 
 client.on('message', message => {
