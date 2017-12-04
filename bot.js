@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const api = "http://zipcloud.ibsnet.co.jp/api/search?callback=?"
+const api = "https://jsonplaceholder.typicode.com/posts"
 const snekfetch = require("snekfetch");
 
 let prefix = ';'
