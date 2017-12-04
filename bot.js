@@ -23,6 +23,18 @@ client.on('message', message => {
                 console.log(err);
                 return message.reply('Error getting Minecraft server status...');
             }
+	    if(response) {
+                console.log(response);
+                return message.reply('Error getting Minecraft server status...');
+            }
+	    if(body) {
+                console.log(body);
+                return message.reply('Error getting Minecraft server status...');
+            }
+            body = JSON.parse(body);
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor(body.id)
+	    message.channel.sendEmbed(embed);
 	});
 	
     }
