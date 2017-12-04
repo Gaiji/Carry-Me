@@ -25,15 +25,18 @@ client.on('message', message => {
 	let stars = 0;
 	if (test < 10){
 	    let stars = 1;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
 	}
 	if (test >= 10){
 	    let stars = 2;
-	    message.author.send("a");
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
 	}
-	let embed = new Discord.RichEmbed()
-    	    .setAuthor("Hypixel UHC Stars")
-	    .setDescription(stars + "✫");
-	message.channel.sendEmbed(embed);
     }
     
 });
