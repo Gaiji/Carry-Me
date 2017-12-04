@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const HypixelAPI = require('hypixel-api')
 const client = new Discord.Client();
+const HypixelClient = new HypixelAPI(args[1])
 
 let prefix = ';'
 
@@ -10,6 +11,8 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+    let hypixelPlayer
+    hypixelPlayer = (await HypixelClient.getPlayer('name', 'llIl')).player
     if (message.content === prefix + 'ping') {
     	message.channel.sendMessage('あなたのPingは`' + `${Date.now() - message.createdTimestamp}` + ' ms`です');
         //message.reply('pong');
