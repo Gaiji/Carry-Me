@@ -28,10 +28,10 @@ client.on('message', message => {
 	if (test >= 10){
 	    let stars = 2;
 	}
-	let embed = new Discord.RichEmbed(){
+	let embed = new Discord.RichEmbed()
     	    .setAuthor("Hypixel UHC Stars");
 	    .setDescription(stars + "✫")
-	}
+	
     }
     
 });
