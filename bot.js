@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
+const Hypixel = require('hypixel');
+ 
+var key = new Hypixel({ key: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' });
 
 let prefix = ';'
 
@@ -14,6 +17,10 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: ';help', type: 0 } });
 });
 client.on('message', message => {
+    if (message.content.startsWith(prefix + 'uhc')) {
+	let args = message.content.split(" ").slice(1);
+	let unk = args.join(" ")
+	var url = 'https://api.hypixel.net/player?key=' + key + '&name='+unk
     if (message.content.startsWith(prefix + 'namehistory')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
