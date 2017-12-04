@@ -14,13 +14,18 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.content === prefix + 'ping') {
     	message.channel.sendMessage('あなたのPingは`' + `${Date.now() - message.createdTimestamp}` + ' ms`です');
-        //message.reply('pong');
-  	}
+    }
     if (message.content === prefix + 'help') {
 	message.reply("DMに送りました")
     	message.author.send("コマンドリスト: ");
 	message.author.send(";ping - あなたのPingを表示します");
-  	}
+    }
+    $.getJSON('http://zipcloud.ibsnet.co.jp/api/search?callback=?',
+      {
+        zipcode: $('#zip').val()
+      }
+    )
+    message.author.send($.getJSON);
 });
 
 client.login(process.env.BOT_TOKEN);
