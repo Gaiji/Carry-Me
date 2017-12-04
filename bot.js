@@ -27,7 +27,7 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, data) {
-	    if (body){
+	    if (data){
 		let embed = new Discord.RichEmbed()
 	            .setDescription(data.player.displayname + "'s UHC Champions Stats")
        		    .addField("Coins", zero(data.player.stats.UHC.coins), true)
