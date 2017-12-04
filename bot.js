@@ -31,16 +31,16 @@ client.on('message', message => {
 	                .setColor("#9B59B6")
 	                .setDescription(" Stats: *"+ status + "*")
 	                .setDescription(" Players: *"+ body.players.now + "*");
-	            
+	            message.channel.sendEmbed(embed);
                 } else {
                     let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
 	                .setDescription(" Stats: *"+ status + "*")
 	                .setDescription(" Players: *"+ 0 + "*");
+                    message.channel.sendEmbed(embed);
                 }
             }
-            message.channel.sendEmbed(embed);
         });
     }
     if (message.content === prefix + 'ping') {
