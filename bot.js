@@ -13,9 +13,9 @@ client.on('message', message => {
         //message.reply('pong');
   	}
     if (message.content === prefix + 'help') {
-    	message.channel.sendMessage('コマンド:');
-    	message.channel.sendMessage(' ;ping');
-    	message.channel.sendMessage(' ;?');
+    	message.author.sendMessage('コマンド:');
+    	message.author.sendMessage(' ;ping');
+    	message.author.sendMessage(' ;?');
         //message.reply('pong');
   	}
 });
