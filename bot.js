@@ -14,6 +14,13 @@ client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: ';help', type: 0 } });
 });
+function zero(variable) {
+    if (variable === undefined) {
+        return 0;
+    } else {
+        return variable;
+    }
+}
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'uhc')) {
 	let args = message.content.split(" ").slice(1);
@@ -21,7 +28,13 @@ client.on('message', message => {
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
-	    message.channel.send(body.player.stats.UHC.coins);
+	    let embed = new Discord.RichEmbed()
+	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		.addField("Coins", zero(body.player.stats.UHC.coins), true)
+		.addField("Score", zero(body.player.stats.UHC.score), true)
+		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+	    message.channel.sendEmbed(embed);
 	});
     }
     if (message.content.startsWith(prefix + 'namehistory')) {
