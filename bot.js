@@ -28,7 +28,7 @@ client.on('message', message => {
 	var url ='http://api.mymemory.translated.net/get?q='+ unk +'&&llangpair=en|ja'
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
-	    message.channel.sendEmbed(body);
+	    message.channel.send(body);
 	});
     }
     if (message.content.startsWith(prefix + 'uhc')) {
