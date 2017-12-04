@@ -16,8 +16,7 @@ client.on('message', message => {
     }
     if (message.content === prefix + 'help') {
 	message.reply("DMに送りました")
-    	message.author.send("コマンドリスト: ");
-	message.author.send(";ping - あなたのPingを表示します");
+    	message.author.send("コマンドリスト: \n;Ping - あなたのPingを表示します\n;stars <score> - スターを表示します");
     }
     if (message.content.startsWith(prefix + 'stars')) {
 	let args = message.content.split(" ").slice(1);
