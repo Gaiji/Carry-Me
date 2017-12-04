@@ -20,13 +20,17 @@ client.on('message', message => {
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
 	    if(!body) {
-                console.log(body);
-                return message.reply('Error getting Minecraft server status...');
+                return message.reply('指定されたプレイヤーは存在しません');
             }
             body = JSON.parse(body);
-	    let embed = new Discord.RichEmbed()
-    	        .setAuthor(body.id)
-	    message.channel.sendEmbed(embed);
+	    var url2 = 'https://api.mojang.com/user/profiles/'+body.id+'/names'
+	    request(url2, function(err, response, body) {
+		body = JSON.parse(body);
+	        message.reply(body);
+	    });
+	    //let embed = new Discord.RichEmbed()
+    	    //    .setAuthor(body.id)
+	    //message.channel.sendEmbed(embed);
 	});
 	
     }
