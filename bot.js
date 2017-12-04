@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const api = "http://zipcloud.ibsnet.co.jp/api/search?callback=?"
+const snekfetch = require("snekfetch");
 
 let prefix = ';'
 
@@ -17,12 +19,7 @@ client.on('message', message => {
     	message.author.send("コマンドリスト: ");
 	message.author.send(";ping - あなたのPingを表示します");
     }
-    $.getJSON('http://zipcloud.ibsnet.co.jp/api/search?callback=?',
-      {
-        zipcode: $('#zip').val()
-      }
-    )
-    message.author.send($.getJSON);
+    snekfetch.get(api).then(console.log);
 });
 
 client.login(process.env.BOT_TOKEN);
