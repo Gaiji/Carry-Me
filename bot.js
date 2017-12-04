@@ -19,7 +19,6 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
-	    body = JSON.parse(body);
 	    
 	});
     }
