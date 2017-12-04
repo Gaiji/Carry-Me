@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const HypixelAPI = require('hypixel-api')
 
-const client = new HypixelAPI('API-key')
+const hypixel = new HypixelAPI('API-key')
 
 let prefix = ';'
 
