@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const api = "https://api.hypixel.net/player?key=435e41c7-1db5-4669-800a-86234b76fbe0&name=llil"
+const api = "http://sk1er.club/newlevel/hypixel"
 const snekfetch = require("snekfetch");
 
 let prefix = ';'
