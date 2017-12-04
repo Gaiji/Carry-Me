@@ -14,9 +14,9 @@ client.on('message', message => {
         //message.reply('pong');
   	}
     if (message.content === prefix + 'help') {
-	message.reply("I have sent you cmds in dms")
-    	message.author.send("コマンドリスト: ",
-		";ping - あなたのPingを表示します")
+	message.reply("DMに送りました")
+    	message.author.send("コマンドリスト: ");
+	message.author.send(";ping - あなたのPingを表示します");
   	}
 });
 
