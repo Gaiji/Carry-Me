@@ -37,6 +37,97 @@ client.on('message', message => {
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
+	if (test >= 60){
+	    let stars = 3;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 210){
+	    let stars = 4;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 460){
+	    let stars = 5;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 960){
+	    let stars = 6;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 1710){
+	    let stars = 7;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 2710){
+	    let stars = 8;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 5210){
+	    let stars = 9;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 10210){
+	    let stars = 10;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 13210){
+	    let stars = 11;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 16210){
+	    let stars = 12;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 19210){
+	    let stars = 13;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 22210){
+	    let stars = 14;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
+	if (test >= 25210){
+	    let stars = 15;
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor("Hypixel UHC Stars")
+	        .setDescription(stars + "✫");
+	    message.channel.sendEmbed(embed);
+	}
     }
     
 });
