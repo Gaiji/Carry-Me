@@ -1,13 +1,8 @@
 const Discord = require('discord.js');
-const HypixelAPI = require('hypixel-api')
 const client = new Discord.Client();
-const args = process.argv.slice(2)
+const HypixelAPI = require('hypixel-api')
 
-if (args.length < 2) {
-	console.log('Usage: node index.js <Discord bot token> <Hypixel API key>')
-	process.exit(0)
-}
-const HypixelClient = new HypixelAPI(args[1])
+const client = new HypixelAPI('API-key')
 
 let prefix = ';'
 
@@ -17,8 +12,6 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    let hypixelPlayer
-    hypixelPlayer = (await HypixelClient.getPlayer('name', 'llIl')).player
     if (message.content === prefix + 'ping') {
     	message.channel.sendMessage('あなたのPingは`' + `${Date.now() - message.createdTimestamp}` + ' ms`です');
         //message.reply('pong');
