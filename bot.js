@@ -19,15 +19,7 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
-	    if(err) {
-                console.log(err);
-                return message.reply('Error getting Minecraft server status...');
-            }
-	    if(response) {
-                console.log(response);
-                return message.reply('Error getting Minecraft server status...');
-            }
-	    if(!body.id) {
+	    if(body) {
                 console.log(body);
                 return message.reply('Error getting Minecraft server status...');
             }
