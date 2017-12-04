@@ -27,6 +27,7 @@ client.on('message', message => {
 	    let stars = 15;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -34,6 +35,7 @@ client.on('message', message => {
 	    let stars = 14;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -41,6 +43,7 @@ client.on('message', message => {
 	    let stars = 13;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -48,6 +51,7 @@ client.on('message', message => {
 	    let stars = 12;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -55,6 +59,7 @@ client.on('message', message => {
 	    let stars = 11;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -62,6 +67,7 @@ client.on('message', message => {
 	    let stars = 10;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -69,6 +75,7 @@ client.on('message', message => {
 	    let stars = 9;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -76,6 +83,7 @@ client.on('message', message => {
 	    let stars = 8;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -83,6 +91,7 @@ client.on('message', message => {
 	    let stars = 7;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -90,6 +99,7 @@ client.on('message', message => {
 	    let stars = 6;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -97,6 +107,7 @@ client.on('message', message => {
 	    let stars = 5;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -104,6 +115,7 @@ client.on('message', message => {
 	    let stars = 4;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -111,6 +123,7 @@ client.on('message', message => {
 	    let stars = 3;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -118,6 +131,7 @@ client.on('message', message => {
 	    let stars = 2;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
@@ -125,6 +139,7 @@ client.on('message', message => {
 	    let stars = 1;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
+	        .setColor("#9B59B6")
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
