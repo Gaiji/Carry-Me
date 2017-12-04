@@ -25,7 +25,7 @@ client.on('message', message => {
             body = JSON.parse(body);
 	    var url2 = 'https://api.mojang.com/user/profiles/'+body.id+'/names'
 	    request(url2, function(err, response, body) {
-	        message.reply(body);
+	        message.reply(body.changedToAt[0]);
 	    });
 	    //let embed = new Discord.RichEmbed()
     	    //    .setAuthor(body.id)
