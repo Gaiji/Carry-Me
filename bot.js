@@ -1,6 +1,12 @@
 const Discord = require('discord.js');
 const HypixelAPI = require('hypixel-api')
 const client = new Discord.Client();
+const args = process.argv.slice(2)
+
+if (args.length < 2) {
+	console.log('Usage: node index.js <Discord bot token> <Hypixel API key>')
+	process.exit(0)
+}
 const HypixelClient = new HypixelAPI(args[1])
 
 let prefix = ';'
