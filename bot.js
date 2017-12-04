@@ -34,8 +34,8 @@ client.on('message', message => {
 		.addField("Score", zero(body.player.stats.UHC.score), true)
 		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
 		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-		.addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
-        	.addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true);
+		.addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
+        	.addField("Teams Wins", zero(body.player.stats.UHC.wins), true);
 	    message.channel.sendEmbed(embed);
 	});
     }
