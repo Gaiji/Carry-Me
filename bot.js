@@ -4,6 +4,7 @@ let prefix = '!'
 
 client.on('ready', () => {
     console.log('I am ready!');
+    bot.user.setGame('Hello!')
 });
 
 client.on('message', message => {
