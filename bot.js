@@ -27,7 +27,7 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
-	    if (Number(body.player.stats.UHC.score) >= 25210){
+	    if (zero(body.player.stats.UHC.score) >= 25210){
 	        let stars = 15
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -40,7 +40,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 22210){
+	    else if (zero(body.player.stats.UHC.score) >= 22210){
 	        let stars = 14;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -53,7 +53,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 19210){
+	    else if (zero(body.player.stats.UHC.score) >= 19210){
 	        let stars = 13;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -66,7 +66,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 16210){
+	    else if (zero(body.player.stats.UHC.score) >= 16210){
 	        let stars = 12;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -79,7 +79,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 13210){
+	    else if (zero(body.player.stats.UHC.score) >= 13210){
 	        let stars = 11;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -92,7 +92,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 10210){
+	    else if (zero(body.player.stats.UHC.score) >= 10210){
 	        let stars = 10;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -105,7 +105,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 5210){
+	    else if (zero(body.player.stats.UHC.score) >= 5210){
 	        let stars = 9;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -118,7 +118,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 2710){
+	    else if (zero(body.player.stats.UHC.score) >= 2710){
 	        let stars = 8;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -131,7 +131,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 1710){
+	    else if (zero(body.player.stats.UHC.score) >= 1710){
 	        let stars = 7;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -144,7 +144,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 960){
+	    else if (zero(body.player.stats.UHC.score) >= 960){
 	        let stars = 6;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -157,7 +157,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 460){
+	    else if (zero(body.player.stats.UHC.score) >= 460){
 	        let stars = 5;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -170,7 +170,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 210){
+	    else if (zero(body.player.stats.UHC.score) >= 210){
 	        let stars = 4;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -183,7 +183,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 60){
+	    else if (zero(body.player.stats.UHC.score) >= 60){
 	        let stars = 3;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -196,7 +196,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score >= 10){
+	    else if (zero(body.player.stats.UHC.score) >= 10){
 	        let stars = 2;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
@@ -209,7 +209,7 @@ client.on('message', message => {
 	    	    .addField("Stars", zero(stars), true)
 	        message.channel.sendEmbed(embed);
 	    }
-	    else if (body.player.stats.UHC.score < 10){
+	    else if (zero(body.player.stats.UHC.score) < 10){
 	        let stars = 1;
 		let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
