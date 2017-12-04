@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
-const Hypixel = require('hypixel');
- 
-var key = new Hypixel({ key: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' });
+const request = require('request');
+var key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 
 let prefix = ';'
 
