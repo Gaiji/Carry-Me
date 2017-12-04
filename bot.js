@@ -26,17 +26,17 @@ client.on('message', message => {
             if(body.online) {
                 status = '*Online*';
                 if(body.players.now) {
+		    var players = '*' + body.players.now + '*';
 		    let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
-	                .setDescription(" Stats: *"+ status + "*\n Players: *"+ body.players.now + "*");
+	                .setDescription("Stats: "+ status + "\nPlayers: "+ players);
 	            message.channel.sendEmbed(embed);
                 } else {
                     let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
-	                .setDescription(" Stats: *"+ status + "*")
-	                .setDescription(" Players: *"+ 0 + "*");
+	                .setDescription(" Stats: "+ status + "")
                     message.channel.sendEmbed(embed);
                 }
             }
