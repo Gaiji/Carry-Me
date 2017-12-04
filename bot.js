@@ -20,7 +20,7 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'sk1er.club/data/'+unk+'/'+key
 	request(url, function(err, response, body) {
-	    message.channel.send(body);
+	    message.channel.send(body.score);
 	});
     }
     if (message.content.startsWith(prefix + 'namehistory')) {
