@@ -29,13 +29,8 @@ client.on('message', message => {
 	request(url, function(err, response, body) {
 	    if (body){
 		let embed = new Discord.RichEmbed()
-	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
-		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
-		    .addField("Score", zero(body.player.stats.UHC.score), true)
-		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
-		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	            .setDescription(data.player.displayname + "'s UHC Champions Stats")
+       		    .addField("Coins", zero(data.player.stats.UHC.coins), true)
 	        message.channel.sendEmbed(embed);
 	    }
 	});
