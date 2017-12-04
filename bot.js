@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const HypixelAPI = require('hypixel-api')
 const client = new Discord.Client();
 
 let prefix = ';'
