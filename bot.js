@@ -22,6 +22,8 @@ client.on('message', message => {
 	    body = JSON.parse(body);
 	    if(body.id) {
 	        message.reply(body.id);
+	    }else{
+		return;
 	    }
 	});
     }
