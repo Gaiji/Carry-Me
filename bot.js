@@ -31,7 +31,7 @@ client.on('message', message => {
 	let embed = new Discord.RichEmbed()
     	    .setAuthor("Hypixel UHC Stars")
 	    .setDescription(stars + "✫");
-	
+	message.channel.sendEmbed(embed);
     }
     
 });
