@@ -22,6 +22,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'stars')) {
 	let args = message.content.split(" ").slice(1);
 	let test = Number(args.join(" "))
+	let stars = 0;
 	if (test < 10){
 	    let stars = 1;
 	}
