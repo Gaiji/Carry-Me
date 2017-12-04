@@ -19,8 +19,16 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
-	    
+	    if(err) {
+                console.log(err);
+                return message.reply('Error getting Minecraft server status...');
+            }
+            body = JSON.parse(body);
+	    let embed = new Discord.RichEmbed()
+    	        .setAuthor(body.id)
+	    message.channel.sendEmbed(embed);
 	});
+	
     }
     if (message.content === prefix + mcCommand) {
         var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
