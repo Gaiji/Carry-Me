@@ -19,7 +19,7 @@ client.on('message', message => {
     	message.author.send("コマンドリスト: ");
 	message.author.send(";ping - あなたのPingを表示します");
     }
-    if (message.startsWith(prefix + 'stars')) {
+    if (message.content.startsWith(prefix + 'stars')) {
 	let args = message.content.split(" ").slice(1);
 	let test = args.join(" ")
     	message.channel.sendMessage(test);
