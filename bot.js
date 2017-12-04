@@ -21,7 +21,7 @@ client.on('message', message => {
     }
     snekfetch.get(api).then(r => {
 	let body = r.body;
-	let id = 1
+	let id = 40
 	let entry = body.find(post => post.id === id);
 	console.log(entry);
     });
