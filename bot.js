@@ -8,7 +8,7 @@ var request = require('request');
 var mcCommand = 'hypixel'; // Command for triggering
 var mcIP = 'hypixel.net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
-var key = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+var key = "1605cce0-ae99-493e-9917-3cf6db7a3a89";
 
 client.on('ready', () => {
     console.log('I am ready!');
