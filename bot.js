@@ -28,6 +28,9 @@ client.on('message', message => {
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
 	message.channel.send(url);
 	request(url, function(err, response, body) {
+	    if(!body) {
+                return message.reply('指定されたプレイヤーは存在しません');
+            }
 	    body = JSON.parse(body);
 	    message.channel.send(body.responseData.translatedText);
 	});
