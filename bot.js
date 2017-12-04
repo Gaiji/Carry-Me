@@ -30,7 +30,7 @@ client.on('message', message => {
 		    let embed = new Discord.RichEmbed()
     	                .setAuthor("Hypixel.net")
 	                .setColor("#9B59B6")
-	                .setDescription("Stats: *"+ status + "*\nPlayers: *"+ players + "*人");
+	                .setDescription("Stats: *"+ status + "*\nPlayers: *"+ players + "*");
 	            message.channel.sendEmbed(embed);
                 } else {
                     let embed = new Discord.RichEmbed()
