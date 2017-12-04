@@ -27,7 +27,7 @@ client.on('message', message => {
                 console.log(response);
                 return message.reply('Error getting Minecraft server status...');
             }
-	    if(body) {
+	    if(!body.id) {
                 console.log(body);
                 return message.reply('Error getting Minecraft server status...');
             }
