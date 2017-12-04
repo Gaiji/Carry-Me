@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const api = "https://jsonplaceholder.typicode.com/posts"
+const api = "https://api.hypixel.net/player?key=435e41c7-1db5-4669-800a-86234b76fbe0&name=llil"
 const snekfetch = require("snekfetch");
 
 let prefix = ';'
@@ -21,8 +21,8 @@ client.on('message', message => {
     }
     snekfetch.get(api).then(r => {
 	let body = r.body;
-	let id = Number(message);
-	let entry = body.find(post => post.id === id);
+	let score = 2786;
+	let entry = body.find(post => post.score === score);
 	console.log(entry);
     });
 });
