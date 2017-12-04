@@ -129,7 +129,7 @@ client.on('message', message => {
 	    message.channel.sendEmbed(embed);
 	}
 	else{
-	    message.channel.reply(";stars <score>")
+	    message.reply(";stars <score>")
 	}
     }
     
