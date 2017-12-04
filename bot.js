@@ -22,7 +22,9 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'stars')) {
 	let args = message.content.split(" ").slice(1);
 	let test = args.join(" ")
-    	message.channel.sendMessage(test);
+	if (test === Number){
+	    message.channel.sendMessage(test);
+	}
     }
     
 });
