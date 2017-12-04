@@ -128,6 +128,9 @@ client.on('message', message => {
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
+	else{
+	    message.channel.reply(";stars <score>")
+	}
     }
     
 });
