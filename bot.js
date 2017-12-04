@@ -14,8 +14,10 @@ client.on('ready', () => {
     client.user.setPresence({ game: { name: ';help', type: 0 } });
 });
 client.on('message', message => {
-    if (message.content === prefix + 'test') {
-	var url = 'https://api.mojang.com/users/profiles/minecraft/llil'
+    if (message.content.startsWith(prefix + 'namehistory')) {
+	let args = message.content.split(" ").slice(1);
+	let unk = args.join(" ")
+	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
 	    if(body.id) {
