@@ -27,14 +27,202 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
-	    body = JSON.parse(body);
-	    let embed = new Discord.RichEmbed()
-	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
-		.addField("Coins", zero(body.player.stats.UHC.coins), true)
-		.addField("Score", zero(body.player.stats.UHC.score), true)
-		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-	    message.channel.sendEmbed(embed);
+	    var test = body.player.stats.UHC.score;
+	    if (test >= 25210){
+	        let stars = 15
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 22210){
+	        let stars = 14;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 19210){
+	        let stars = 13;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 16210){
+	        let stars = 12;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 13210){
+	        let stars = 11;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 10210){
+	        let stars = 10;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 5210){
+	        let stars = 9;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 2710){
+	        let stars = 8;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 1710){
+	        let stars = 7;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 960){
+	        let stars = 6;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 460){
+	        let stars = 5;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 210){
+	        let stars = 4;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	        else if (test >= 60){
+	        let stars = 3;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test >= 10){
+	        let stars = 2;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
+	    else if (test < 10){
+	        let stars = 1;
+		let embed = new Discord.RichEmbed()
+	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		    .addField("Score", zero(body.player.stats.UHC.score), true)
+		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		    .addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+		    .addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true)
+	    	    .addField("Stars", zero(stars), true)
+	        message.channel.sendEmbed(embed);
+	    }
 	});
     }
     if (message.content.startsWith(prefix + 'namehistory')) {
