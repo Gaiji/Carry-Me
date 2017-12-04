@@ -23,7 +23,7 @@ client.on('message', message => {
 	let body = r.body;
 	let score = Number(2786);
 	let entry = body.find(score);
-	console.log(entry);
+	console.log(r.score);
     });
 });
 
