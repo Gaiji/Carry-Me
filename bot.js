@@ -19,7 +19,7 @@ client.on('message', message => {
     	message.author.send("コマンドリスト: ");
 	message.author.send(";ping - あなたのPingを表示します");
     }
-    snekfetch.get(api).then(message.author.send);
+    snekfetch.get(api).then(console.log);
 });
 
 client.login(process.env.BOT_TOKEN);
