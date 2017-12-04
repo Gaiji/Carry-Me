@@ -18,7 +18,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'uhc')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
-	var url = 'sk1er.club/data/'+unk+'/'+key
+	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
 	    message.channel.send(body.score);
 	});
@@ -26,7 +26,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'namehistory')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
-	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
+	var url = 'https://api.mojang.com/users/profiles/minecraft/'+unk
 	request(url, function(err, response, body) {
 	    if(!body) {
                 return message.reply('指定されたプレイヤーは存在しません');
