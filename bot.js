@@ -23,10 +23,6 @@ client.on('message', message => {
                 console.log(err);
                 return message.reply('Error getting Minecraft server status...');
             }
-            body = JSON.parse(body);
-	    let embed = new Discord.RichEmbed()
-    	        .setAuthor(body.id)
-	    message.channel.sendEmbed(embed);
 	});
 	
     }
