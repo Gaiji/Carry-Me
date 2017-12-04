@@ -15,8 +15,8 @@ client.on('ready', () => {
 });
 client.on('message', message => {
     if (message.content === prefix + 'test') {
-        var url = 'https://api.mojang.com/users/profiles/minecraft/llil'
-        request(url, function(err, response, body) {
+	var url = 'https://api.mojang.com/users/profiles/minecraft/llil'
+	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
 	    if(body.id) {
 	        message.reply(body.id);
