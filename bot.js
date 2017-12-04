@@ -21,7 +21,7 @@ client.on('message', message => {
 	    if(body.id) {
 	        message.reply(body.id);
 	    }
-	}
+	});
     }
     if (message.content === prefix + mcCommand) {
         var url = 'http://mcapi.us/server/status?ip=' + mcIP + '&port=' + mcPort;
