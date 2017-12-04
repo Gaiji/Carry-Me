@@ -8,7 +8,7 @@ var request = require('request');
 var mcCommand = 'hypixel'; // Command for triggering
 var mcIP = 'hypixel.net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
-var key = "1605cce0-ae99-493e-9917-3cf6db7a3a89";
+var key = "12755d3c-51c6-4926-bb41-2baeb72d4c0c";
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -26,7 +26,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'namehistory')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
-	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
+	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
 	    if(!body) {
                 return message.reply('指定されたプレイヤーは存在しません');
