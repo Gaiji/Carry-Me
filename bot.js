@@ -28,16 +28,14 @@ client.on('message', message => {
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
-	    let teamkills = body.player.stats.UHC.kills - body.player.stats.UHC.kills_solo;
-   	    let teamwins = body.player.stats.UHC.wins - body.player.stats.UHC.wins_solo;
 	    let embed = new Discord.RichEmbed()
 	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		.addField("Coins", zero(body.player.stats.UHC.coins), true)
 		.addField("Score", zero(body.player.stats.UHC.score), true)
 		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
 		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-		.addField("Teams Kills", zero(teamkills), true)
-        	.addField("Teams Wins", zero(teamwins), true);
+		.addField("Teams Kills", zero(body.player.stats.UHC.kills_team), true)
+        	.addField("Teams Wins", zero(body.player.stats.UHC.wins_team), true);
 	    message.channel.sendEmbed(embed);
 	});
     }
