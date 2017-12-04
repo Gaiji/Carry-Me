@@ -20,11 +20,7 @@ client.on('message', message => {
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+ unk
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
-	    if(body.id) {
-	        message.reply(body.id);
-	    }else{
-		return;
-	    }
+	    
 	});
     }
     if (message.content === prefix + mcCommand) {
