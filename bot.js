@@ -24,7 +24,7 @@ function zero(variable) {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'translate')) {
 	let args = message.content.split(" ").slice(1);
-	let unk = args.json(" ")
+	let unk = args.join(" ")
 	var url ='http://api.mymemory.translated.net/get?q='+ unk +'&&llangpair=en|ja'
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
