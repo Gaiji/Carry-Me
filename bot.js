@@ -26,6 +26,7 @@ client.on('message', message => {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
+	message.channel.send(url);
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
 	    message.channel.send(body);
