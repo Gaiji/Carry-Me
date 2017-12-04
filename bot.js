@@ -54,7 +54,7 @@ client.on('message', message => {
 	    var url2 = 'https://api.mojang.com/user/profiles/'+body.id+'/names'
 	    request(url2, function(err, response, body) {
 	        let embed = new Discord.RichEmbed()
-		    .setAuthor(body.id)
+		    .setAuthor(body)
 		message.channel.sendEmbed(embed);
 	    });
 	    //let embed = new Discord.RichEmbed()
