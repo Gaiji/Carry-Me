@@ -55,6 +55,7 @@ client.on('message', message => {
 	    request(url2, function(err, response, body) {
 	        let embed = new Discord.RichEmbed()
 		    .setAuthor("Name History")
+		    .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 		    .setDescription(body)
 		message.channel.sendEmbed(embed);
 	    });
