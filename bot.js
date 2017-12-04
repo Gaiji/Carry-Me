@@ -20,7 +20,7 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	request(url, function(err, response, body) {
-	    message.channel.send(body.score);
+	    message.channel.send(body);
 	});
     }
     if (message.content.startsWith(prefix + 'namehistory')) {
