@@ -14,7 +14,8 @@ client.on('message', message => {
         //message.reply('pong');
   	}
     if (message.content === prefix + 'help') {
-    	message.author.send("コマンドリスト", " ;ping");
+    	message.author.send("コマンドリスト: ",
+		";ping - あなたのPingを表示します")
   	}
 });
 
