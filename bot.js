@@ -23,9 +23,14 @@ client.on('message', message => {
                 return message.reply('指定されたプレイヤーは存在しません');
             }
             body = JSON.parse(body);
+	    let uuid = body.id;
 	    var url2 = 'https://api.mojang.com/user/profiles/'+body.id+'/names'
 	    request(url2, function(err, response, body) {
-	        message.reply(body);
+		let embed = new Discord.RichEmbed()
+    	            .setAuthor('Name History')
+		    .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
+		    .setDescription(body)
+		message.channel.sendEmbed(embed);
 	    });
 	    //let embed = new Discord.RichEmbed()
     	    //    .setAuthor(body.id)
