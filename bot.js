@@ -29,8 +29,8 @@ client.on('message', message => {
 	    let stars = 2;
 	}
 	let embed = new Discord.RichEmbed()
-    	    .setAuthor("Hypixel UHC Stars");
-	    .setDescription(stars + "✫")
+    	    .setAuthor("Hypixel UHC Stars")
+	    .setDescription(stars + "✫");
 	
     }
     
