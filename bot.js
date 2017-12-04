@@ -22,6 +22,15 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
+    if (message.content.startsWith(prefix + 'translate')) {
+	let args = message.content.split(" ").slice(1);
+	let unk = args.json(" ")
+	var url ='http://api.mymemory.translated.net/get?q='+ unk +'&&llangpair=en|ja'
+	request(url, function(err, response, body) {
+	    body = JSON.parse(body);
+	    message.channel.sendEmbed(body);
+	}
+    }
     if (message.content.startsWith(prefix + 'uhc')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
