@@ -114,7 +114,7 @@ client.on('message', message => {
 	        .setDescription(stars + "✫");
 	    message.channel.sendEmbed(embed);
 	}
-	if (test >= 10){
+	else if (test >= 10){
 	    let stars = 2;
 	    let embed = new Discord.RichEmbed()
     	        .setAuthor("Hypixel UHC Stars")
