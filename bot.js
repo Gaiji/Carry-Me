@@ -23,10 +23,14 @@ client.on('message', message => {
 	let args = message.content.split(" ").slice(1);
 	let test = Number(args.join(" "))
 	if (test < 10){
-	    message.channel.sendMessage('あなたは`1スター`です(' + test + ' Score)');
+	    let stars = 1;
 	}
 	if (test >= 10){
-	    message.channel.sendMessage('あなたは`2スター`です(' + test + ' Score)');
+	    let stars = 2;
+	}
+	let embed = new Discord.RichEmbed(){
+    	    .setAuthor("Hypixel UHC Stars");
+	    .setDescription(stars + "✫")
 	}
     }
     
