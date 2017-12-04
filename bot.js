@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 let prefix = ';'
+var commandslist = fs.readFileSync('Carry-Me/commands.txt', 'utf8');
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -13,10 +14,7 @@ client.on('message', message => {
         //message.reply('pong');
   	}
     if (message.content === prefix + 'help') {
-    	message.author.sendMessage('コマンド:');
-    	message.author.sendMessage(' ;ping');
-    	message.author.sendMessage(' ;?');
-        //message.reply('pong');
+    	message.channel.send(commandslist);
   	}
 });
 
