@@ -29,7 +29,7 @@ client.on('message', message => {
 	message.channel.send(url);
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
-	    message.channel.send(body);
+	    message.channel.send(body.responseData.translatedText);
 	});
     }
     if (message.content.startsWith(prefix + 'uhc')) {
