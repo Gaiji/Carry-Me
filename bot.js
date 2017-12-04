@@ -32,7 +32,7 @@ client.on('message', message => {
 		.addField("Coins", zero(body.player.stats.UHC.coins), true)
 		.addField("Score", zero(body.player.stats.UHC.score), true)
 		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true);
 	    message.channel.sendEmbed(embed);
 	});
     }
