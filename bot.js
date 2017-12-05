@@ -72,6 +72,58 @@ client.on('message', message => {
 		if (body.player === null) {
 		    return message.reply('指定されたプレイヤーはステータスが存在しません');
 		}
+		let rank;
+		if (body.player.newPackageRank === "YOUTUBER") {
+                    rank = '0xFFAA00';
+                } else if (body.player.newPackageRank === "ADMIN") {
+                    rank = '0xAA0000';
+                } else if (body.player.newPackageRank === "MODERATOR") {
+                    rank = '0x00AA00';
+                } else if (body.player.newPackageRank === "HELPER") {
+                    rank = '0x0000AA';
+                } else if (body.player.newPackageRank === "BUILD_TEAM") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "OWNER") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "JR_HELPER") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "MOJANG") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "MCProHosting") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "APPLE") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "SLOTH") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "ANGUS") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "EVENTS") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "Mixer") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "BUILD_TEAM_PLUS") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "LOL") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "LOL_PLUS") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "RETIRED") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "SPECIAL") {
+                    rank = '0x00AAAA';
+                } else if (body.player.newPackageRank === "BETA_TESTER") {
+                    rank = '0x00AAAA';
+		} else if (body.player.newPackageRank === "VIP") {
+                    rank = '0x55FF55';
+		} else if (body.player.newPackageRank === "VIP_PLUS") {
+                    rank = '0x55FF55';
+		} else if (body.player.newPackageRank === "MVP") {
+                    rank = '0x55FFFF';
+		} else if (body.player.newPackageRank === "MVP_PLUS") {
+                    rank = '0xFF5555';
+		} else {
+                    rank = '0xAAAAAA';
+                }
 		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
 	        let embed = new Discord.RichEmbed()
@@ -86,6 +138,7 @@ client.on('message', message => {
 		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
+	            .setColor(rank)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
 	        message.channel.sendEmbed(embed);
