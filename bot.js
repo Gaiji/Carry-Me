@@ -26,7 +26,7 @@ client.on('message', message => {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
         let fromlang = 'auto';
-        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl=en&dt=t&q=" + unk;
+        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl=ja&dt=t&q=" + unk;
         request(gurl, function(error, response, body) {
             try {
               // body = iconv.decode(body, 'utf8');
