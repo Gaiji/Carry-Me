@@ -48,11 +48,11 @@ client.on('message', message => {
 	    try {
 	        body = JSON.parse(body);
 		if (body.responseData.translatedText === "NO QUERY SPECIFIED. EXAMPLE REQUEST: GET?Q=HELLO&LANGPAIR=EN|IT"){
-		    return message.reply("`"+ message +" <word>`")
+		    return message.reply("```"+ message +" <word>```")
 		}
-	        message.channel.send(body.responseData.translatedText);
+	        message.channel.sendMessage("```"+body.responseData.translatedText+"```");
 	    } catch (err) {
-                return message.reply("`Input was invalid`");
+                return message.reply("```Input was invalid```");
             }
 	});
     }
