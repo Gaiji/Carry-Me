@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
-const querystring = require("querystring");
-const iso = require('iso-639-1');
 
 let prefix = ';'
 
@@ -25,13 +23,10 @@ function zero(variable) {
 }
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'test')) {
-	let args = message.content.replace(/"/g, '');
-        let toLang = args.split(' ')[args.split(' ').length - 1];
-        toLang = iso.getCode(toLang) == '' ? toLang : iso.getCode(toLang);
-        args = args.replace((" " + args.split(' ')[args.split(' ').length - 1]), '')
-        args = querystring.escape(args);
+	let args = message.content.split(" ").slice(1);
+	let unk = args.join(" ")
         let fromlang = 'auto';
-        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl=" + toLang + "&dt=t&q=" + args;
+        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl=en&dt=t&q=" + unk;
         request(gurl, function(error, response, body) {
             try {
               // body = iconv.decode(body, 'utf8');
