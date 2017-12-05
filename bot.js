@@ -73,45 +73,45 @@ client.on('message', message => {
 		    return message.reply('指定されたプレイヤーはステータスが存在しません');
 		}
 		let rank;
-		if (body.player.newPackageRank === "YOUTUBER") {
+		if (body.player.rank === "YOUTUBER") {
                     rank = '0xFFAA00';
-                } else if (body.player.newPackageRank === "ADMIN") {
+                } else if (body.player.rank === "ADMIN") {
                     rank = '0xAA0000';
-                } else if (body.player.newPackageRank === "MODERATOR") {
+                } else if (body.player.rank === "MODERATOR") {
                     rank = '0x00AA00';
-                } else if (body.player.newPackageRank === "HELPER") {
+                } else if (body.player.rank === "HELPER") {
                     rank = '0x0000AA';
-                } else if (body.player.newPackageRank === "BUILD_TEAM") {
+                } else if (body.player.rank === "BUILD_TEAM") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "OWNER") {
+                } else if (body.player.rank === "OWNER") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "JR_HELPER") {
+                } else if (body.player.rank === "JR_HELPER") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "MOJANG") {
+                } else if (body.player.rank === "MOJANG") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "MCProHosting") {
+                } else if (body.player.rank === "MCProHosting") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "APPLE") {
+                } else if (body.player.rank === "APPLE") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "SLOTH") {
+                } else if (body.player.rank === "SLOTH") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "ANGUS") {
+                } else if (body.player.rank === "ANGUS") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "EVENTS") {
+                } else if (body.player.rank === "EVENTS") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "Mixer") {
+                } else if (body.player.rank === "Mixer") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "BUILD_TEAM_PLUS") {
+                } else if (body.player.rank === "BUILD_TEAM_PLUS") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "LOL") {
+                } else if (body.player.rank === "LOL") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "LOL_PLUS") {
+                } else if (body.player.rank === "LOL_PLUS") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "RETIRED") {
+                } else if (body.player.rank === "RETIRED") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "SPECIAL") {
+                } else if (body.player.rank === "SPECIAL") {
                     rank = '0x00AAAA';
-                } else if (body.player.newPackageRank === "BETA_TESTER") {
+                } else if (body.player.rank === "BETA_TESTER") {
                     rank = '0x00AAAA';
 		} else if (body.player.newPackageRank === "VIP") {
                     rank = '0x55FF55';
@@ -120,7 +120,7 @@ client.on('message', message => {
 		} else if (body.player.newPackageRank === "MVP") {
                     rank = '0x55FFFF';
 		} else if (body.player.newPackageRank === "MVP_PLUS") {
-                    rank = '0xFF5555';
+                    rank = '0x55FFFF';
 		} else {
                     rank = '0xAAAAAA';
                 }
