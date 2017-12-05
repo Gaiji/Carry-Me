@@ -72,6 +72,7 @@ client.on('message', message => {
 		if (body.player === null) {
 		    return message.reply('指定されたプレイヤーはステータスが存在しません');
 		}
+		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
@@ -79,6 +80,7 @@ client.on('message', message => {
 		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
 		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
 		    .addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
+       		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
         	    .addField("Teams Wins", zero(body.player.stats.UHC.wins), true);
