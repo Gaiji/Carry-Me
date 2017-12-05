@@ -45,13 +45,13 @@ client.on('message', message => {
 	request(url, function(err, response, body) {
 	    body = JSON.parse(body);
 	    let embed = new Discord.RichEmbed()
-	        .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
 	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		.addField("Coins", zero(body.player.stats.UHC.coins), true)
 		.addField("Score", zero(body.player.stats.UHC.score), true)
 		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
 		.addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
 		.addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
+	        .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
         	.addField("Teams Wins", zero(body.player.stats.UHC.wins), true);
 	    message.channel.sendEmbed(embed);
 	});
