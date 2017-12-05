@@ -86,6 +86,7 @@ client.on('message', message => {
 		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
+        	    .addField("Equipped Kit", zero(body.player.stats.UHC.equippedKit), true)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
 	        message.channel.sendEmbed(embed);
