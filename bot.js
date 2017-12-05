@@ -27,7 +27,13 @@ client.on('message', message => {
 	let unk = args.join(" ")
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
 	message.channel.send(url);
-	request(url, function(err, response, body) {
+	request(url, function(error, response, body) {
+	    try {
+	        body = JSON.parse(body);
+	        message.channel.send(body.responseData.translatedText);
+	    } catch (err) {
+                return message.channel.sendMessage("`Input was invalid`");
+            }
 	    if(String.prototype.includes(body) == "<html><body><h1>400 Bad request</h1>"){
 	       return message.reply(';translate <word>');
             }
