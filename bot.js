@@ -9,7 +9,7 @@ var mcCommand = 'hypixel'; // Command for triggering
 var mcIP = 'hypixel.net'; // Your MC server IP
 var mcPort = 25565; // Your MC server port
 var key = "12755d3c-51c6-4926-bb41-2baeb72d4c0c";
-
+//.setColor(hypixelfunctions.getrankcolor(body.player.newPackageRank, body.player.rank, body.player.rankPlusColor, unk, body.player.packageRank))
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setPresence({ game: { name: ';help', type: 0 } });
@@ -75,7 +75,7 @@ client.on('message', message => {
 		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
 	        let embed = new Discord.RichEmbed()
-	            .setDescription(body.player.rank + " "+ body.player.displayname + "'s UHC Champions Stats")
+	            .setDescription(body.player.newPackageRank + " "+ body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
 		    .addField("Score", zero(body.player.stats.UHC.score), true)
 		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
