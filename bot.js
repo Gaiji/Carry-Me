@@ -127,7 +127,7 @@ client.on('message', message => {
     }
     if (message.content === prefix + 'help') {
 	message.reply("DMに送りました")
-    	message.author.send("コマンドリスト: \n;Ping - あなたのPingを表示します\n;stars <score> - スターを表示します\n;hypixel - hypixelのステータスを表示します\n;namehistory <player> - 指定したプレイヤーのName Historyが表示されます\n;uhc <player> - 指定したプレイヤーのUHCステータスを表示できます\n;trans <word> - 英語から日本語に翻訳できます");
+    	message.author.send("```diff\n-コマンドリスト: \n+ ;Ping - あなたのPingを表示します\n+ ;stars <score> - スターを表示します\n+ ;hypixel - hypixelのステータスを表示します\n;namehistory <player> - 指定したプレイヤーのName Historyが表示されます\n;uhc <player> - 指定したプレイヤーのUHCステータスを表示できます\n;trans <word> - 英語から日本語に翻訳できます```")
 	message.author.send("Commands List: \n;Ping - Show your ping\n;stars <score> - Show your stars\n;hypixel - Show hypixel server stats\n;namehistory <player> - Show player name history\n;uhc <player> - Show player uhc stats(hypixel.net)\n;trans <word> - Translate from english to japanese");
     }
     if (message.content.startsWith(prefix + 'stars')) {
