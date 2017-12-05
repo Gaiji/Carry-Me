@@ -75,7 +75,7 @@ client.on('message', message => {
 		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
 	        let embed = new Discord.RichEmbed()
-	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
+	            .setDescription(body.player.rank + " "+ body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
 		    .addField("Score", zero(body.player.stats.UHC.score), true)
 		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
@@ -86,7 +86,6 @@ client.on('message', message => {
 		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
-        	    .addField("Equipped Kit", zero(body.player.stats.UHC.equippedKit), true)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
 	        message.channel.sendEmbed(embed);
