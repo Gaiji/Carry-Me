@@ -79,13 +79,13 @@ client.on('message', message => {
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
 		    .addField("Score", zero(body.player.stats.UHC.score), true)
 		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
 		    .addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
+		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+        	    .addField("Teams Wins", zero(body.player.stats.UHC.wins), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
-	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
-        	    .addField("Teams Wins", zero(body.player.stats.UHC.wins), true);
+	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
 	        message.channel.sendEmbed(embed);
 	    });
 	});
