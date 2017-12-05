@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const snekfetch = require("snekfetch");
+const querystring = require("querystring");
+const iso = require('iso-639-1');
 
 let prefix = ';'
 
@@ -22,6 +24,26 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
+    if (message.content.startsWith(prefix + 'test')) {
+	let args = message.content.replace(/"/g, '');
+        let toLang = args.split(' ')[args.split(' ').length - 1];
+        toLang = iso.getCode(toLang) == '' ? toLang : iso.getCode(toLang);
+        args = args.replace((" " + args.split(' ')[args.split(' ').length - 1]), '')
+        args = querystring.escape(args);
+        let fromlang = 'auto';
+        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl=" + toLang + "&dt=t&q=" + args;
+        request(gurl, function(error, response, body) {
+            try {
+              // body = iconv.decode(body, 'utf8');
+              // console.log(bodyWithCorrectEncoding)
+                let translated = body.match(/^\[\[\[".+?",/)[0];
+                translated = translated.substring(4, translated.length - 2);
+                message.channel.sendMessage("```\nTranslated:\n" + translated + "\n```");
+            } catch (err) {
+                message.channel.sendMessage("`Input was invalid`");
+            }
+        });
+    }
     if (message.content.startsWith(prefix + 'translate') || message.content.startsWith(prefix + 'trans')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
