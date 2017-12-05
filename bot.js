@@ -31,7 +31,7 @@ client.on('message', message => {
 	    try {
 	        body = JSON.parse(body);
 		if (body.responseData.translatedText === "NO QUERY SPECIFIED. EXAMPLE REQUEST: GET?Q=HELLO&LANGPAIR=EN|IT"){
-		    return message.reply("`;"+ args +" <word>`")
+		    return message.reply("`"+ message.content.startsWith +" <word>`")
 		}
 	        message.channel.send(body.responseData.translatedText);
 	    } catch (err) {
