@@ -25,8 +25,8 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'test')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
-        let fromlang = 'ja';
-        let tolang = 'en';
+        let fromlang = 'auto';
+        let tolang = 'ja';
         let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl="+tolang+"&dt=t&q=" + unk;
         request(gurl, function(error, response, body) {
             try {
