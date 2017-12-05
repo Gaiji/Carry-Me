@@ -46,6 +46,7 @@ client.on('message', message => {
 	    body = JSON.parse(body);
 	    let embed = new Discord.RichEmbed()
 	        .setDescription(body.player.displayname + "'s UHC Champions Stats")
+	        .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
 		.addField("Coins", zero(body.player.stats.UHC.coins), true)
 		.addField("Score", zero(body.player.stats.UHC.score), true)
 		.addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
