@@ -28,20 +28,15 @@ client.on('message', message => {
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
 	message.channel.send(url);
 	request(url, function(error, response, body) {
+	    if(!body) {
+                return message.reply(';translate <word>');
+            }
 	    try {
 	        body = JSON.parse(body);
 	        message.channel.send(body.responseData.translatedText);
 	    } catch (err) {
                 return message.channel.sendMessage("`Input was invalid`");
             }
-	    if(String.prototype.includes(body) == "<html><body><h1>400 Bad request</h1>"){
-	       return message.reply(';translate <word>');
-            }
-	    if(!body) {
-                return message.reply(';translate <word>');
-            }
-	    body = JSON.parse(body);
-	    message.channel.send(body.responseData.translatedText);
 	});
     }
     if (message.content.startsWith(prefix + 'uhc')) {
