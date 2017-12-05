@@ -51,6 +51,9 @@ client.on('message', message => {
 	    var url2 = 'https://api.hypixel.net/player?key='+key+'&name='+unk
 	    request(url2, function(err, response, body) {
 	        body = JSON.parse(body);
+		if (body.player === null) {
+		    return message.reply('指定されたプレイヤーはステータスが存在しません');
+		}
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
