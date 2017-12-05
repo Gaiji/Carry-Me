@@ -22,20 +22,20 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'translate')) {
+    if (message.content.startsWith(prefix + 'translate') || message.content.startsWith(prefix + 'trans')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
 	var url ='https://api.mymemory.translated.net/get?q='+ unk +'&langpair=en|ja'
 	message.channel.send(url);
 	request(url, function(error, response, body) {
-	    if(!body) {
-                return message.reply(';translate <word>');
-            }
 	    try {
 	        body = JSON.parse(body);
+		if (body === "NO QUERY SPECIFIED. EXAMPLE REQUEST: GET?Q=HELLO&LANGPAIR=EN|IT"){
+		    return message.reply("`;"+ args +" <word>`")
+		}
 	        message.channel.send(body.responseData.translatedText);
 	    } catch (err) {
-                return message.channel.sendMessage("`Input was invalid`");
+                return message.reply("`Input was invalid`");
             }
 	});
     }
