@@ -59,6 +59,7 @@ client.on('message', message => {
 		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
 		    .addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
+	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100')
         	    .addField("Teams Wins", zero(body.player.stats.UHC.wins), true);
 	        message.channel.sendEmbed(embed);
 	    });
