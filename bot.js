@@ -52,7 +52,7 @@ client.on('message', message => {
 		}
 	        message.channel.sendMessage("```"+body.responseData.translatedText+"```");
 	    } catch (err) {
-                return message.reply("```Input was invalid```");
+                return message.channel.sendMessage("```Input was invalid```");
             }
 	});
     }
