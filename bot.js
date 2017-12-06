@@ -141,8 +141,28 @@ client.on('message', message => {
 		        lastlogin = String(datar.localDate);
 	                data = JSON.parse(data);
 		        firstlogin = String(data.localDate);
+			let equipkit;
+			if (body.player.stats.UHC.equippedKit == "LEATHER_ARMOR") {
+			    equipkit = 'Leather Armor';
+			} else if (body.player.stats.UHC.equippedKit == "MAGIC_TOOLS") {
+			    equipkit = 'Enchanting Set';
+			} else if (body.player.stats.UHC.equippedKit == "ARCHERY_TOOLS") {
+			    equipkit = 'Archery Set';
+			} else if (body.player.stats.UHC.equippedKit == "WORKING_TOOLS") {
+			    equipkit = 'Stone Gear';
+			} else if (body.player.stats.UHC.equippedKit == "LUNCH_BOX") {
+			    equipkit = 'Lunch Box';
+			} else if (body.player.stats.UHC.equippedKit == "LOOTER") {
+			    equipkit = 'Looter';
+			} else if (body.player.stats.UHC.equippedKit == "ECOLOGIST") {
+			    equipkit = 'Ecologist';
+			} else if (body.player.stats.UHC.equippedKit == "FARMER") {
+			    equipkit = 'Farmer';
+			} else if (body.player.stats.UHC.equippedKit == "HORSEMAN") {
+			    equipkit = 'Horseman';
+			}
 	                let embed = new Discord.RichEmbed()
-	                    .setDescription(body.player.displayname + "'s UHC Champions Stats - " + body.player.stats.UHC.equippedKit)
+	                    .setDescription(body.player.displayname + "'s UHC Champions Stats - " + equipkit)
 		            .addField("Coins", zero(body.player.stats.UHC.coins), true)
 		            .addField("Score", zero(body.player.stats.UHC.score), true)
 		            .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
