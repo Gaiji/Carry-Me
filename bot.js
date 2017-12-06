@@ -134,24 +134,24 @@ client.on('message', message => {
 	        request(url3, function(err, response, data) {
 	            data = JSON.parse(data);
 		    firstlogin = String(data.localDate);
+	            let embed = new Discord.RichEmbed()
+	                .setDescription(body.player.displayname + "'s UHC Champions Stats")
+		        .addField("Coins", zero(body.player.stats.UHC.coins), true)
+		        .addField("Score", zero(body.player.stats.UHC.score), true)
+		        .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
+		        .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
+		        .addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
+        	        .addField("Teams Wins", zero(body.player.stats.UHC.wins), true)
+		        .addField("Solo Deaths", zero(body.player.stats.UHC.deaths_solo), true)
+		        .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
+       		        .addField("KDR Solo", kdsoloratio.toFixed(2), true)
+       		        .addField("KDR Team", kdteamratio.toFixed(2), true)
+       		        .addField("First login", zero(firstlogin), true)
+	                .setColor(rank)
+	                .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
+	                .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
+	            message.channel.sendEmbed(embed);
 		});
-	        let embed = new Discord.RichEmbed()
-	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
-		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
-		    .addField("Score", zero(body.player.stats.UHC.score), true)
-		    .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
-		    .addField("Solo Wins", zero(body.player.stats.UHC.wins_solo), true)
-		    .addField("Teams Kills", zero(body.player.stats.UHC.kills), true)
-        	    .addField("Teams Wins", zero(body.player.stats.UHC.wins), true)
-		    .addField("Solo Deaths", zero(body.player.stats.UHC.deaths_solo), true)
-		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
-       		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
-       		    .addField("KDR Team", kdteamratio.toFixed(2), true)
-       		    .addField("First login", zero(firstlogin), true)
-	            .setColor(rank)
-	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
-	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
-	        message.channel.sendEmbed(embed);
 	    });
 	});
     }
