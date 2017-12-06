@@ -59,7 +59,7 @@ client.on('message', message => {
     }
     if (message.content.startsWith(prefix + 'uhc')) {
 	if (!(message.channel.name === 'uhc-player')) {
-	    return message.reply('#uhc-player で;uhcコマンドを使いましょう');
+	    return message.channel.sendMessage('#uhc-player で;uhcコマンドを使いましょう');
 	}
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
