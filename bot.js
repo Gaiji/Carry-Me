@@ -127,7 +127,7 @@ client.on('message', message => {
                 }
 		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
-		var a = body.player.firstLogin
+		var a = String(body.player.firstLogin);
 		var str = a.slice( 0, -3 );
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
