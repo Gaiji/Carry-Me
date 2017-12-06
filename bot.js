@@ -154,6 +154,7 @@ client.on('message', message => {
        		            .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		            .addField("KDR Team", kdteamratio.toFixed(2), true)
        		            .addField("First login", zero(firstlogin), true)
+       		            .addField("Last login", zero(lastlogin), true)
 	                    .setColor(rank)
 	                    .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	                    .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
