@@ -23,7 +23,6 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
-    console.log(message.channel.name);
     if (message.content.startsWith(prefix + 'test')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
@@ -59,6 +58,9 @@ client.on('message', message => {
 	});
     }
     if (message.content.startsWith(prefix + 'uhc')) {
+	if (!(message.channel.name === 'uhc-player')) {
+	    return message.reply('#uhc-player で;uhcコマンドを使いましょう');
+	}
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+unk
