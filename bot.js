@@ -23,11 +23,6 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
-    if (message.content.startsWith(prefix + 'timestamp')) {
-	var str = "1403935875716";
-	var a = str.slice( 0, -3 );
-	message.channel.sendMessage(a);
-    }
     if (message.content.startsWith(prefix + 'test')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
@@ -132,6 +127,7 @@ client.on('message', message => {
                 }
 		var kdsoloratio = body.player.stats.UHC.kills_solo / body.player.stats.UHC.deaths_solo;
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
+		var str = body.player.firstLogin.slice( 0, -3 );
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
@@ -144,6 +140,7 @@ client.on('message', message => {
 		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
+       		    .addField("First login", zero(str), true)
 	            .setColor(rank)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
