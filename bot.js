@@ -129,6 +129,12 @@ client.on('message', message => {
    		var kdteamratio = body.player.stats.UHC.kills / body.player.stats.UHC.deaths;
 		var a = String(body.player.firstLogin);
 		var str = a.slice( 0, -3 );
+	        var url3 = 'http://www.convert-unix-time.com/api?timestamp='+ str +'&format=english'
+		let firstlogin;
+	        request(url3, function(err, response, data) {
+	            data = JSON.parse(data);
+		    firstlogin = data.localDate;
+		});
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
 		    .addField("Coins", zero(body.player.stats.UHC.coins), true)
@@ -141,7 +147,7 @@ client.on('message', message => {
 		    .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		    .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		    .addField("KDR Team", kdteamratio.toFixed(2), true)
-       		    .addField("First login", zero(str), true)
+       		    .addField("First login", zero(firstlogin), true)
 	            .setColor(rank)
 	            .setThumbnail('https://crafatar.com/avatars/' + (uuid || '') + '?size=100')
 	            .setThumbnail('https://crafatar.com/avatars/' + (unk || '') + '?size=100');
