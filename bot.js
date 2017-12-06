@@ -25,7 +25,7 @@ function zero(variable) {
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'timestamp')) {
 	var str = 1403935875716;
-	var b = str.slice( 0, -3 ) ;
+	var b = str.length;
 	message.channel.sendMessage(b);
     }
     if (message.content.startsWith(prefix + 'test')) {
