@@ -26,7 +26,7 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'timestamp')) {
 	var str = "1403935875716";
 	var a = str.slice( 0, -2 );
-	message.channel.sendMessage(str);
+	message.channel.sendMessage(a);
     }
     if (message.content.startsWith(prefix + 'test')) {
 	let args = message.content.split(" ").slice(1);
