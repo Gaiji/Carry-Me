@@ -23,7 +23,7 @@ function zero(variable) {
     }
 }
 client.on('message', message => {
-    console.log(client.channels.get);
+    console.log(message.channel);
     if (message.content.startsWith(prefix + 'test')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
