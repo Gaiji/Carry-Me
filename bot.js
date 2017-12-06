@@ -133,7 +133,7 @@ client.on('message', message => {
 		let firstlogin;
 	        request(url3, function(err, response, data) {
 	            data = JSON.parse(data);
-		    firstlogin = data.localDate;
+		    firstlogin = String(data.localDate);
 		});
 	        let embed = new Discord.RichEmbed()
 	            .setDescription(body.player.displayname + "'s UHC Champions Stats")
