@@ -142,7 +142,7 @@ client.on('message', message => {
 	                data = JSON.parse(data);
 		        firstlogin = String(data.localDate);
 	                let embed = new Discord.RichEmbed()
-	                    .setDescription(body.player.displayname + "'s UHC Champions Stats")
+	                    .setDescription(body.player.displayname + "'s UHC Champions Stats - " + body.player.stats.UHC.equippedKit)
 		            .addField("Coins", zero(body.player.stats.UHC.coins), true)
 		            .addField("Score", zero(body.player.stats.UHC.score), true)
 		            .addField("Solo Kills", zero(body.player.stats.UHC.kills_solo), true)
@@ -153,6 +153,8 @@ client.on('message', message => {
 		            .addField("Teams Deaths", zero(body.player.stats.UHC.deaths), true)
        		            .addField("KDR Solo", kdsoloratio.toFixed(2), true)
        		            .addField("KDR Team", kdteamratio.toFixed(2), true)
+			    .addField("Head Eat Solo", zero(body.player.stats.UHC.heads_eaten_solo), true)
+			    .addField("Head Eat Team", zero(body.player.stats.UHC.heads_eaten), true)
        		            .addField("First login", zero(firstlogin), true)
        		            .addField("Last login", zero(lastlogin), true)
 	                    .setColor(rank)
