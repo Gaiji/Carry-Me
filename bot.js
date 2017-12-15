@@ -189,7 +189,7 @@ client.on('message', message => {
 	    });
 	});
     }
-    if (message.content.startsWith(prefix + 'namehistory')) {
+    if (message.content.startsWith(prefix + 'namehistory') || message.content.startsWith(prefix + 'nh')) {
 	let args = message.content.split(" ").slice(1);
 	let unk = args.join(" ")
 	var url = 'https://api.mojang.com/users/profiles/minecraft/'+unk
